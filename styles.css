@@ -1,0 +1,63 @@
+body.body {
+  background-image: url(Images/nature3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 81.2vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Login inputs div */
+.inputsDiv {
+  top: 40%;
+  left: 43%;
+  transform: translate(-25%, -50%);
+  position: absolute;
+  background: #0000005e;
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+
+/*  Login input fields  */
+#emailInput, #passwordInput {
+background-color: #38804a47;
+color: white;
+}
+
+/*  Remember me */
+.remembercheckBox {
+  color: #08ffea;
+}
+.remembercheckBox:hover{
+  color: #13e65f;
+}
+
+/*  forgotpswd checkbox */
+.forgotpswd {
+float: right;
+color: #08ffea;
+}
+.forgotpswd:hover{
+color: #13e65f;
+text-decoration: underline;
+}
+/* Login submit btn */
+#submitLogin {
+  font-size: larger;
+  background: #00ff210a;
+  color: aqua;
+}
+#submitLogin:hover{
+color: #13e925;
+background-color: #82bd8236;
+border-color: #398439;
+font-size: large;
+}
+
+/* Create Account */
+.createAcc{
+  color: red;
+  text-decoration: underline;
+}
+
