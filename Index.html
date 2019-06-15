@@ -14,36 +14,71 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<style></style>
-
 <body class="body">
   <form>
-    <div class="container">
+    <div class="container" id="totalDiv">
       <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 inputsDiv">
-          <input type="text" name="" id="emailInput" class="form-control" placeholder="UserName/Email" value=""
-            required="required" pattern="" title="" />
+          <h3 class="agilance">Agilance</h3>
+          <br>
+          <input type="text" name="" id="emailInput" class="form-control" placeholder="UserName/Email" />
           <br />
-          <input type="password" name="" id="passwordInput" class="form-control" placeholder="Password"
-            required="required" title="" />
+          <input type="password" name="" id="passwordInput" class="form-control" placeholder="Password" />
           <br />
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="" >
-             <span class="remembercheckBox"> Remember me </span>
-            </label > 
+              <input type="checkbox" value="">
+              <span class="remembercheckBox"> Remember me </span>
+            </label>
             <a class="forgotpswd" href="#" style="float: right">
               Forgot Password?
             </a>
           </div>
-          <button type="submit" class="btn btn-success form-control" id="submitLogin"><b>Submit</b></button>
+          <input type="submit" class="btn btn-success form-control" value="Login" id="submitLogin" onclick=login()>
           <br>
           <br>
-          <p class="createAcc">Create an account: <span> Sign-Up</span></p>
+          <a href="EmployeePage.html">
+            <p class="createAcc">Create an account: <span> Sign-Up</span></p>
+          </a>
         </div>
-      </div>
+        
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          
+          <div class="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Title!</strong> Alert body ...
+          </div>
+          
+        </div>
+        
+    </div>
     </div>
   </form>
+
 </body>
+<script>
+
+  function login() {
+    loginObj = {
+      "empMail": $("#emailInput").val(),
+      "empPswd": $("#passwordInput").val()
+    }
+
+    var empObj = JSON.stringify(loginObj);
+    //  alert("Employee mail is: " + ' ' + loginObj.empMail + '\n'+"Employee Password is: " + loginObj.empPswd);
+    // console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n'+"Employee Password is: " + loginObj.empPswd);
+    $.ajax({
+      type: "POST",
+      url: "/api/login/authenticateUser",
+      data: "loginObj",
+      success: function (msg) {
+        alert("Data Saved");
+      }
+    }, function (resp) {
+      window.open("EmployeePage.html");
+    });
+  }
+
+</script>
 
 </html>

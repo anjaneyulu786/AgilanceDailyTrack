@@ -8,6 +8,11 @@ body.body {
   overflow-y: hidden;
 }
 
+/* agilance */
+.agilance {
+color: #62ff00;
+}
+
 /* Login inputs div */
 .inputsDiv {
   top: 40%;
@@ -47,6 +52,8 @@ text-decoration: underline;
   font-size: larger;
   background: #00ff210a;
   color: aqua;
+  font-weight: bold;
+  font-style:large;
 }
 #submitLogin:hover{
 color: #13e925;
