@@ -47,28 +47,25 @@
 <script>
 
   function login() {
-    loginObj = {
+     loginObj = {
       "empMail": $("#emailInput").val(),
       "empPswd": $("#passwordInput").val()
     }
 
-    var empObj = JSON.stringify(loginObj);
+      var empObj = JSON.stringify(loginObj); 
+   // console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
 
-    console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
-    setTimeout(function () {
-      alert    ("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
-    }, 3000);
+     alert("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
       
-     
-    $.ajax({
+     $.ajax({
       type: "POST",
       url: "/api/login/authenticateUser",
       data: "loginObj",
       success: function (msg) {
         alert("Data Saved");
       }
-    });
-    //  window.open("EmployeePage.html");
+    }); 
+    window.open("EmployeePage.html");
 
   }
 
