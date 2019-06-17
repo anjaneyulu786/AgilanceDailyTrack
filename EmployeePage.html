@@ -1,1 +1,45 @@
-    <h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <input type="date" id="currentDate" value="" class="form-control">
+            </div>
+           
+            
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                
+                <button type="button" id="SendDate" class="btn btn-success">SendDate</button>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script>
+    $("#SendDate").click(function () {
+       
+       var empDate = {
+     "currentDate":  $("#currentDate").val()
+       }
+       alert($("#currentDate").val());
+    });
+    </script>
+    
+    
+</body>
+</html>
