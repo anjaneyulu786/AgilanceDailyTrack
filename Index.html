@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,8 +53,13 @@
     }
 
     var empObj = JSON.stringify(loginObj);
-    //  alert("Employee mail is: " + ' ' + loginObj.empMail + '\n'+"Employee Password is: " + loginObj.empPswd);
-    // console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n'+"Employee Password is: " + loginObj.empPswd);
+
+    console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
+    setTimeout(function () {
+      alert    ("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
+    }, 3000);
+      
+     
     $.ajax({
       type: "POST",
       url: "/api/login/authenticateUser",
@@ -64,7 +68,7 @@
         alert("Data Saved");
       }
     });
-      window.open("EmployeePage.html");
+    //  window.open("EmployeePage.html");
 
   }
 
