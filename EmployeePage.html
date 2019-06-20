@@ -12,34 +12,30 @@
 <body>
     
     <div class="container">
-        
         <div class="row">
-            
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <input type="date" id="currentDate" value="" class="form-control">
             </div>
-           
-            
+
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                
-                <button type="button" id="SendDate" class="btn btn-success">SendDate</button>
-                
+                <button type="button" id="SendDate" class="btn btn-success">SendDate</button>    
             </div>
-            
         </div>
-        
     </div>
 
     <script>
+    var dt = new Date();
+        $("#currentDate").append("dt");
+
     $("#SendDate").click(function () {
-       
        var empDate = {
-     "currentDate":  $("#currentDate").val()
+     "currentDate" :  $("#currentDate").val()
        }
-       alert($("#currentDate").val());
+       alert("todays Date is: " + empDate.currentDate);
     });
     </script>
     
-    
 </body>
 </html>
+
+

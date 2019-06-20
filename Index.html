@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,37 +37,34 @@
           <input type="submit" class="btn btn-success form-control" value="Login" id="submitLogin" onclick=login()>
           <br>
           <br>
-            <p class="createAcc">Create an account: <span> Sign-Up</span></p>
+          <p class="createAcc">Create an account: <span> Sign-Up</span></p>
         </div>
 
       </div>
     </div>
   </form>
-
 </body>
 <script>
 
   function login() {
-     loginObj = {
+    loginObj = {
       "empMail": $("#emailInput").val(),
       "empPswd": $("#passwordInput").val()
     }
+    // console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
+   // alert("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
 
-      var empObj = JSON.stringify(loginObj); 
-   // console.log("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
-
-     alert("Employee mail is: " + ' ' + loginObj.empMail + '\n' + "Employee Password is: " + loginObj.empPswd);
-      
-     $.ajax({
-      type: "POST",
+    $.ajax({
+      type: "POST", 
       url: "/api/login/authenticateUser",
-      data: "loginObj",
+      data: loginObj,
       success: function (msg) {
-        alert("Data Saved");
+        alert("Data Saved", msg);
+      },
+      error: function (errMessage) {
       }
-    }); 
-    window.open("EmployeePage.html");
-
+    });
+    window.open("empCalendar.html");
   }
 
 </script>
